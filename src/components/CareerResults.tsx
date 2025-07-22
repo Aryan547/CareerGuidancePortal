@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Trophy, Star, ArrowLeft, BookOpen, TrendingUp, Users } from 'lucide-react';
+import { CareerDetails } from './CareerDetails';
 
 interface CareerRecommendation {
   career: string;
@@ -19,6 +20,17 @@ interface CareerResultsProps {
 }
 
 export const CareerResults: React.FC<CareerResultsProps> = ({ recommendations, onBack }) => {
+  const [selectedCareer, setSelectedCareer] = useState<CareerRecommendation | null>(null);
+
+  if (selectedCareer) {
+    return (
+      <CareerDetails 
+        career={selectedCareer} 
+        onBack={() => setSelectedCareer(null)} 
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-background p-4">
       <div className="max-w-4xl mx-auto">
@@ -124,9 +136,10 @@ export const CareerResults: React.FC<CareerResultsProps> = ({ recommendations, o
             Take Assessment Again
           </Button>
           <Button 
-            variant="education" 
+            variant="default" 
             size="lg"
             className="px-8"
+            onClick={() => setSelectedCareer(recommendations[0])}
           >
             <BookOpen className="h-4 w-4 mr-2" />
             Explore Career Details
