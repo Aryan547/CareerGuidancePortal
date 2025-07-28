@@ -1,3 +1,5 @@
+Title: Career Guidance Portal
+
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
@@ -42,4 +44,4 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-Site Link : https://lovable.dev/projects/cc4da97f-03ad-474d-a1b7-4d969f24a475
+Site Link: https://lovable.dev/projects/cc4da97f-03ad-474d-a1b7-4d969f24a475
